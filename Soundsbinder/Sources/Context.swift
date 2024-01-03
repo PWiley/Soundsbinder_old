@@ -18,7 +18,7 @@ class Context {
     
     // MARK: - Initialisers
     
-    private init(networkClient: HTTPClient, imageProvider: ImageProvider) {
+    init(networkClient: HTTPClient, imageProvider: ImageProvider) {
         self.networkClient = networkClient
         self.imageProvider = imageProvider
         

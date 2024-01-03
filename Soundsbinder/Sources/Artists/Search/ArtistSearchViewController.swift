@@ -50,9 +50,7 @@ final class ArtistSearchViewController: UIViewController {
         bind(to: source)
         viewModel.viewDidLoad()
     }
-//    override func viewWillAppear(_ animated: Bool) {
-//
-//    }
+
     // MARK: - Private
     
     private func setupLayout() {
@@ -64,11 +62,7 @@ final class ArtistSearchViewController: UIViewController {
         navigationItem.searchController = searchController
         
         searchController.searchBar.delegate = self
-        
-        view.addSubview(collectionView)
-//        collectionView.snp.makeConstraints {
-//            $0.top.bottom.leading.trailing.equalToSuperview()
-//        }
+       
     }
   
     private func bind(to viewModel: ArtistSearchViewModel) {

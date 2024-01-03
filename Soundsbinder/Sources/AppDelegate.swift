@@ -27,7 +27,11 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         
         imageCache = NSCache<NSString, NSData>()
 
-        context = Context!
+        let client = HTTPClient()
+        let imageProvider = ImageProvider()
+        
+        context = Context(networkClient: client, imageProvider: imageProvider)
+        
         coordinator = AppCoordinator(presenter: window!, context: context)
         coordinator.start()
         return true
