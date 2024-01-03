@@ -11,15 +11,16 @@ class Context {
     
     // MARK: - Properties
     
-    let client: HTTPClient
-
-    // MARK: - Methods
+    let networkClient: HTTPClient
     
-    static func build() -> Context { Context() }
+    let imageProvider: ImageProvider
+
     
     // MARK: - Initialisers
     
-    private init() {
-        self.client = HTTPClient()
+    private init(networkClient: HTTPClient, imageProvider: ImageProvider) {
+        self.networkClient = networkClient
+        self.imageProvider = imageProvider
+        
     }
 }

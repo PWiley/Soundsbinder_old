@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ArtistSearchViewModelDelegate: AnyObject {
-    func didSelect(tracklist: String)
+    func artistScreenDidSelect(tracklist: String)
 }
 
 final class ArtistSearchViewModel {
@@ -63,7 +63,7 @@ final class ArtistSearchViewModel {
             return
         }
         let artist = artists[index]
-        delegate?.didSelect(tracklist: artist.tracklist)
+        delegate?.artistScreenDidSelect(tracklist: artist.tracklist)
     }
     
     // MARK: - Outputs

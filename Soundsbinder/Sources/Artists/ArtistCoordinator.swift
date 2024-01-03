@@ -8,8 +8,12 @@
 import Foundation
 import UIKit
 
-final class ArtistCoordinator {
+final class ArtistCoordinator: ArtistSearchViewModelDelegate {
+    func artistScreenDidSelect(tracklist: String) {
+        
+    }
     
+
     // MARK: - Properties
     
     private let presenter: UIWindow
@@ -26,16 +30,15 @@ final class ArtistCoordinator {
     // MARK: - Coordinator
     
     func start() {
-       showSearch()
+        navigationController = UINavigationController()
+        presenter.rootViewController = navigationController
+        showSearch()
     }
     
     private func showSearch() {
-        let viewController = screens.createSearchViewController()
-        navigationController = UINavigationController(rootViewController: viewController)
-        guard let navigationController = navigationController else {
-            return
-        }
-        presenter.rootViewController = navigationController
+        let viewController = screens.createSearchViewController(delegate: self)
+        navigationController?.pushViewController(viewController, animated: true)
+        
     }
 
     private func showDetails() {

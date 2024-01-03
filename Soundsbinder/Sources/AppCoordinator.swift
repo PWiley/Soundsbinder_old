@@ -12,13 +12,15 @@ final class AppCoordinator {
     
     // MARK: - Private Properties
     
-    private unowned var presenter: AppDelegate
+    private unowned var presenter: UIWindow
+    
     private let context: Context
+    
     private var artistCoordinator: ArtistCoordinator?
 
     // MARK: - Initialisers
     
-    init(presenter: AppDelegate, context: Context) {
+    init(presenter: UIWindow, context: Context) {
         self.presenter = presenter
         self.context = context
     }
@@ -26,13 +28,14 @@ final class AppCoordinator {
     // MARK: - Coordinator
     
     func start() {
-        presenter.window = UIWindow(frame: UIScreen.main.bounds)
-        presenter.window?.makeKeyAndVisible()
-        showArtist()
+//        presenter.window = UIWindow(frame: UIScreen.main.bounds)
+//        presenter.window?.makeKeyAndVisible()
+        presenter.rootViewController = UIViewController()
+        showSearch()
     }
     
-    private func showArtist() {
-        artistCoordinator = ArtistCoordinator(presenter: presenter.window!, context: context)
+    private func showSearch() {
+        artistCoordinator = ArtistCoordinator(presenter: presenter, context: context)
         artistCoordinator?.start()
     }
 }

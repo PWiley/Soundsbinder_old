@@ -26,9 +26,12 @@ final class Screens {
 // MARK: - Search
 
 extension Screens {
-    func createSearchViewController() -> UIViewController {
+    func createSearchViewController(delegate: ArtistSearchViewModelDelegate) -> UIViewController {
         let viewController = artistStoryBoard.instantiateViewController(withIdentifier: "ArtistSearchViewController") as! ArtistSearchViewController
-        
+        let repository = ArtistSearchRepository(client: context.networkClient)
+        let viewModel = ArtistSearchViewModel(artistRepository: repository, delegate: delegate)
+        viewController.viewModel = viewModel
+        viewController.imageProvider = context.imageProvider
         return viewController
     }
 }

@@ -15,10 +15,11 @@ final class ArtistSearchViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     
-    // MARK: - Private Properties
+    // MARK: - Public Properties
     
-    private let viewModel:  ArtistSearchViewModel!
+    var viewModel:  ArtistSearchViewModel!
     var imageProvider: ImageProvider!
+    var repository: ArtistSearchRepository!
     
     private lazy var source: ArtistSearchDataSource = {
         return ArtistSearchDataSource(imageProvider: imageProvider)
@@ -28,18 +29,17 @@ final class ArtistSearchViewController: UIViewController {
         
     private var artists: [VisibleTrack] = []
     
-    // MARK: - Init
-    
-    init(viewModel: ArtistSearchViewModel) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    // MARK: - Init
+//    
+//    init(viewModel: ArtistSearchViewModel, imageProvider: ImageProvider, repository: ArtistSearchRepository) {
+//        self.viewModel = viewModel
+//        self.imageProvider = imageProvider
+//        self.repository = repository
+//    }
     
     // MARK: - View Life Cycle
+    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +50,9 @@ final class ArtistSearchViewController: UIViewController {
         bind(to: source)
         viewModel.viewDidLoad()
     }
-   
+//    override func viewWillAppear(_ animated: Bool) {
+//
+//    }
     // MARK: - Private
     
     private func setupLayout() {
