@@ -35,7 +35,7 @@ final class ArtistSearchDataSource: NSObject, UICollectionViewDataSource, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let artistCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ArtistCollectionViewCell
+        let artistCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ArtistCollectionViewCell", for: indexPath) as! ArtistCollectionViewCell
         //artistCell.configure(artist: artists[indexPath.row])
 //        artistCell.configure(with: <#T##VisibleArtist#>, imageProvider: <#T##ImageProvider?#>)
         artistCell.configure(with: artists[indexPath.row], imageProvider: imageProvider)
