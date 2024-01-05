@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig connectionConfig="{&quot;proxyParams&quot;:{&quot;proxyHost&quot;:&quot;github.com&quot;,&quot;proxyPort&quot;:22,&quot;proxyType&quot;:&quot;HTTP&quot;}}" host="github.com" id="c5a63650-4dda-413a-a62f-ffed5214b11b" keyPath="$USER_HOME$/.ssh/id_ecdsa" port="443" nameFormat="DESCRIPTIVE" username="PWiley" useOpenSSHConfig="true" />
+    </configs>
+  </component>
+</project>

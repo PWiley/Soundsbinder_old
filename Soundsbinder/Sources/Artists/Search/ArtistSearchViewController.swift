@@ -57,7 +57,7 @@ final class ArtistSearchViewController: UIViewController {
         collectionView.backgroundColor = .white
         
         navigationController?.navigationItem.largeTitleDisplayMode = .automatic
-        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.prefersLargeTitles = false
         navigationItem.hidesSearchBarWhenScrolling = false
         navigationItem.searchController = searchController
         
