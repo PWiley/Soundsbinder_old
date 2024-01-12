@@ -39,8 +39,10 @@ extension Screens {
 // MARK: - Details
 
 extension Screens {
-    func createDetailsViewController() -> UIViewController {
+    func createDetailsViewController(trackList: String) -> UIViewController {
         let viewController = artistStoryBoard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+        let repository = DetailsRepository(client: context.networkClient)
+        let viewModel = DetailsViewModel(repository: repository, trackList: <#T##String#>)
         return viewController
     }
 }

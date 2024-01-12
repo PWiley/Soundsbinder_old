@@ -42,7 +42,7 @@ final class ArtistCoordinator: ArtistSearchViewModelDelegate {
     }
 
     private func showDetails() {
-        let viewController = screens.createDetailsViewController()
+        let viewController = screens.createDetailsViewController(trackList: <#T##String#>)
         navigationController?.pushViewController(viewController, animated: true)
     }
 }
