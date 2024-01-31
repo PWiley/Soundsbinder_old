@@ -7,38 +7,16 @@
 
 import UIKit
 
+protocol TrackTableViewCellDelegate: AnyObject {
+    func trackTableViewCellDidPressPlayStop(at index: Int)
+}
+
 class TrackTableViewCell: UITableViewCell {
     
-    // trackNumber -- trackTitle -- trackDuration
-    
-    private lazy var trackNumber: UILabel = {
-        let number = UILabel()
-        number.text = ""
-        number.textColor = .red
-        number.textAlignment = .center
-        number.numberOfLines = 1
-        return number
-    }()
-    
-    private lazy var trackTitle: UILabel = {
-        let title = UILabel()
-        title.backgroundColor = .blue
-        title.text = ""
-        title.textColor = .black
-        title.textAlignment = .center
-        title.numberOfLines = 1
-        return title
-    }()
-    
-    private lazy var trackDuration: UILabel = {
-        let albumTitle = UILabel()
-        albumTitle.backgroundColor = .red
-        albumTitle.text = ""
-        albumTitle.textColor = .black
-        albumTitle.textAlignment = .center
-        albumTitle.numberOfLines = 1
-        return albumTitle
-    }()
+    @IBOutlet weak var trackNumber: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var albumTitle: UILabel!
+    @IBOutlet weak var playStopTrackButton: UIButton!
     
     // MARK: - Init
     
@@ -55,24 +33,6 @@ class TrackTableViewCell: UITableViewCell {
    
     func setupCellLayout() {
         
-//        contentView.addSubview(trackNumber)
-//        trackNumber.snp.makeConstraints {
-//            $0.height.width.equalTo(30)
-//            $0.leading.top.equalToSuperview()
-//        }
-//
-//        contentView.addSubview(trackTitle)
-//        trackTitle.snp.makeConstraints {
-//            $0.leading.equalTo(trackNumber.snp.trailing)
-//            $0.trailing.top.equalToSuperview()
-//            $0.height.equalTo(contentView).dividedBy(2)
-//        }
-//        contentView.addSubview(trackDuration)
-//        trackDuration.snp.makeConstraints {
-//            $0.leading.equalTo(trackNumber.snp.trailing)
-//            $0.trailing.bottom.equalToSuperview()
-//            $0.height.equalTo(contentView).dividedBy(2)
-//        }
 
     }
     
@@ -81,14 +41,14 @@ class TrackTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         self.trackNumber.text = "trackNumber"
-        self.trackTitle.text = "trackTitle"
-        self.trackDuration.text = "trackDuration"
+        self.titleLabel.text = "titleLabel"
+        self.albumTitle.text = "albumTitle"
     }
 
     func configure(track: VisibleTrack) {
         self.trackNumber.text = String(track.trackNumber)
-        self.trackTitle.text = track.trackTitle
-        self.trackDuration.text = String(track.trackDuration)
+        self.titleLabel.text = track.trackTitle
+        self.albumTitle.text = track.trackDuration
        
         }
     }

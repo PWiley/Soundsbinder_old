@@ -8,12 +8,8 @@
 import Foundation
 import UIKit
 
-final class ArtistCoordinator: ArtistSearchViewModelDelegate {
-    func artistScreenDidSelect(tracklist: String) {
-        
-    }
-    
-
+final class ArtistCoordinator: ArtistDetailsScreenDelegate {
+  
     // MARK: - Properties
     
     private let presenter: UIWindow
@@ -41,9 +37,14 @@ final class ArtistCoordinator: ArtistSearchViewModelDelegate {
         
     }
 
-    private func showDetails() {
-        let viewController = screens.createDetailsViewController(trackList: <#T##String#>)
+    private func showDetails(artistID: Int) {
+        let viewController = screens.createDetailsViewController(artistID: artistID, delegate: self)
         navigationController?.pushViewController(viewController, animated: true)
+    }
+}
+extension ArtistCoordinator: ArtistSearchScreenDelegate {
+    func artistSearchScreenDidSelectArtist(for id: Int) {
+        showDetails(artistID: id)
     }
 }
 

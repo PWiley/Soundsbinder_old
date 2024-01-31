@@ -11,9 +11,6 @@ final class ArtistSearchDataSource: NSObject, UICollectionViewDataSource, UIColl
     
     // MARK: - Private Properties
     
-   // private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
-    //private let itemsPerRow: CGFloat = 3
-   // private let reuseIdentifier = "ArtistCell"
     private var artists: [VisibleArtist] = []
     
     // MARK: - Public Properties
@@ -36,8 +33,6 @@ final class ArtistSearchDataSource: NSObject, UICollectionViewDataSource, UIColl
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let artistCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ArtistCollectionViewCell", for: indexPath) as! ArtistCollectionViewCell
-        //artistCell.configure(artist: artists[indexPath.row])
-//        artistCell.configure(with: <#T##VisibleArtist#>, imageProvider: <#T##ImageProvider?#>)
         artistCell.configure(with: artists[indexPath.row], imageProvider: imageProvider)
         return artistCell
     }
@@ -60,28 +55,6 @@ final class ArtistSearchDataSource: NSObject, UICollectionViewDataSource, UIColl
 
 extension ArtistSearchDataSource: UICollectionViewDelegateFlowLayout {
     
-//    func collectionView(_ collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let paddingSpace = sectionInsets.left * (3 + 1)
-//        let availableWidth = collectionView.frame.width - paddingSpace
-//        //let widthPerItem = availableWidth / itemsPerRow
-//        let widthPerItem = availableWidth / 3
-//
-//        return CGSize(width: widthPerItem, height: widthPerItem)
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                        insetForSectionAt section: Int)-> UIEdgeInsets {
-//        return sectionInsets
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return sectionInsets.left
-//    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (collectionView.frame.width - 32) / 3
         return CGSize(width: width, height: width + 60.0)

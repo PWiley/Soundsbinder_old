@@ -14,8 +14,8 @@
             filePath = "Soundsbinder/Sources/Artists/Search/ArtistSearchViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "source"
             landmarkType = "24">
          </BreakpointContent>
@@ -30,9 +30,9 @@
             filePath = "Soundsbinder/Sources/Artists/ArtistCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "showDetails()"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "showDetails(artistID:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -55,7 +55,23 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "47028828-F7CE-425C-BB2C-B0C0FB29787B"
+            uuid = "6908FD6B-71C7-4892-8906-F3156BB662F6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Soundsbinder/Sources/Artists/Details/Cell/TrackTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "TrackTableViewCell"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F6C0F18E-4404-4E2A-9D14-1FBD176F9D6A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -65,6 +81,118 @@
             startingLineNumber = "65"
             endingLineNumber = "65"
             landmarkName = "didSelectItem(index:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F6C0F18E-4404-4E2A-9D14-1FBD176F9D6A - 2553b8e0ec46cf20"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Soundsbinder.ArtistSearchViewModel.didSelectItem(index: Swift.Int) -&gt; ()"
+                  moduleName = "Soundsbinder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/GREY-HD/+++IOS%20PROJECTS+++/+++XCODE%20PROJECTS+++/Soundsbinder/Soundsbinder/Sources/Artists/Search/ArtistSearchViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "F6C0F18E-4404-4E2A-9D14-1FBD176F9D6A - 2553b8e0ec46cf62"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Soundsbinder.ArtistSearchViewModel.didSelectItem(index: Swift.Int) -&gt; ()"
+                  moduleName = "Soundsbinder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/GREY-HD/+++IOS%20PROJECTS+++/+++XCODE%20PROJECTS+++/Soundsbinder/Soundsbinder/Sources/Artists/Search/ArtistSearchViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "577">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0E1507D4-5382-4F62-9FA3-E587BD3C1EE5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Soundsbinder/Sources/Artists/ArtistCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "artistScreenDidSelectArtist(artistId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A02D8AF1-D7B3-49B0-9D44-020DFF96C54A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Soundsbinder/Sources/Artists/Details/ArtistDetailsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "bind(to:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A02D8AF1-D7B3-49B0-9D44-020DFF96C54A - 81737110cd87a66d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Soundsbinder.ArtistDetailsViewController.bind(to: Soundsbinder.ArtistDetailsViewModel) -&gt; ()"
+                  moduleName = "Soundsbinder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/GREY-HD/+++IOS%20PROJECTS+++/+++XCODE%20PROJECTS+++/Soundsbinder/Soundsbinder/Sources/Artists/Details/ArtistDetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "325">
+               </Location>
+               <Location
+                  uuid = "A02D8AF1-D7B3-49B0-9D44-020DFF96C54A - dbd32b5f77690d8b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Array&lt;Soundsbinder.ArtistDetailsViewModel.Item&gt;) -&gt; () in Soundsbinder.ArtistDetailsViewController.bind(to: Soundsbinder.ArtistDetailsViewModel) -&gt; ()"
+                  moduleName = "Soundsbinder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/GREY-HD/+++IOS%20PROJECTS+++/+++XCODE%20PROJECTS+++/Soundsbinder/Soundsbinder/Sources/Artists/Details/ArtistDetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "62">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0BCD77A7-B77D-4EC1-9AE8-40E2B4DD61E1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Soundsbinder/Sources/Artists/Details/ArtistDetailsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "bind(to:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

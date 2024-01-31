@@ -7,8 +7,7 @@
 
 import Foundation
 
-typealias VoidClosure = () -> Void
-typealias InputClosure<T> = (T) -> Void
+//typealias VoidClosure = () -> Void
 
 extension Collection {
     /// Returns the element at the specified index if it is within bounds, otherwise nil.

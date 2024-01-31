@@ -5,13 +5,14 @@
 //  Created by Patrick Wiley on 01.01.24.
 //
 
-import Foundation
-
-protocol ArtistSearchViewModelDelegate: AnyObject {
-    func artistScreenDidSelect(tracklist: String)
-}
 
 final class ArtistSearchViewModel {
+    
+    struct Artist {
+            let id: Int
+            let name: String
+            let pictureURLString: String
+    }
     
     // MARK: - Private Properties
     
@@ -23,17 +24,11 @@ final class ArtistSearchViewModel {
         }
     }
     
-    struct Artist {
-            let name: String
-            let pictureURLString: String
-        let tracklist: String
-    }
-
-    private weak var delegate: ArtistSearchViewModelDelegate?
+    private weak var delegate: ArtistSearchScreenDelegate?
 
     // MARK: - Init
     
-    init(artistRepository: ArtistSearchRepositoryType, delegate: ArtistSearchViewModelDelegate) {
+    init(artistRepository: ArtistSearchRepositoryType, delegate: ArtistSearchScreenDelegate) {
         self.repository = artistRepository
         self.delegate = delegate
     }
@@ -63,18 +58,18 @@ final class ArtistSearchViewModel {
             return
         }
         let artist = artists[index]
-        delegate?.artistScreenDidSelect(tracklist: artist.tracklist)
+        delegate?.artistSearchScreenDidSelectArtist(for: artist.id)
     }
     
     // MARK: - Outputs
     
-    var screenTitle: InputClosure<String>?
-    var items: InputClosure<[Artist]>?
+    var screenTitle: ((String) -> Void)?
+    var items: (([Artist]) -> Void)?
 }
 extension ArtistSearchViewModel.Artist {
     init(artist: ArtistResponse.Artist) {
+        self.id = artist.id
         self.name = artist.name
         self.pictureURLString = artist.pictureURLString
-        self.tracklist = artist.tracklist
     }
 }

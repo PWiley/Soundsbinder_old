@@ -11,15 +11,15 @@ final class ArtistSearchViewController: UIViewController {
     
     // MARK: - Outlets
 
-   
-    @IBOutlet weak var collectionView: UICollectionView!
-    
-    
+    @IBOutlet weak var collection: UICollectionView!
+        
     // MARK: - Public Properties
     
     var viewModel:  ArtistSearchViewModel!
     var imageProvider: ImageProvider!
     var repository: ArtistSearchRepository!
+    
+    // MARK: - Private Properties
     
     private lazy var source: ArtistSearchDataSource = {
         return ArtistSearchDataSource(imageProvider: imageProvider)
@@ -29,13 +29,9 @@ final class ArtistSearchViewController: UIViewController {
         
     private var artists: [VisibleTrack] = []
     
-//    // MARK: - Init
-//    
-//    init(viewModel: ArtistSearchViewModel, imageProvider: ImageProvider, repository: ArtistSearchRepository) {
-//        self.viewModel = viewModel
-//        self.imageProvider = imageProvider
-//        self.repository = repository
-//    }
+    // MARK: - Init
+    
+  
     
     // MARK: - View Life Cycle
     
@@ -43,34 +39,33 @@ final class ArtistSearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.dataSource = source
-        collectionView.delegate = source
-        setupLayout()
+        collection.dataSource = source
+        collection.delegate = source
+
         bind(to: viewModel)
         bind(to: source)
+        
         viewModel.viewDidLoad()
     }
-
-    // MARK: - Private
     
-    private func setupLayout() {
-        collectionView.backgroundColor = .white
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         navigationController?.navigationItem.largeTitleDisplayMode = .automatic
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationItem.hidesSearchBarWhenScrolling = false
         navigationItem.searchController = searchController
         
         searchController.searchBar.delegate = self
-       
     }
-  
+
+    // MARK: - Private
+      
     private func bind(to viewModel: ArtistSearchViewModel) {
         viewModel.items = { [weak self] artists in
             DispatchQueue.main.async {
                 self?.source.update(with: artists)
-                self?.collectionView.contentOffset = .zero
-                self?.collectionView.reloadData()
+                self?.collection.contentOffset = .zero
+                self?.collection.reloadData()
             }
         }
 

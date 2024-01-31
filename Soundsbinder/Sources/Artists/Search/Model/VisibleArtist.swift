@@ -17,16 +17,16 @@ import Foundation
 // MARK: - VisibleArtist
 
 struct VisibleArtist: Equatable {
+    let id: Int
     let name: String
     let pictureURLString: String
-    let tracklist: String
 }
 
 extension VisibleArtist {
     init(artist: ArtistSearchViewModel.Artist) {
+        self.id = artist.id
         self.name = artist.name
         self.pictureURLString = artist.pictureURLString
-        self.tracklist = artist.tracklist
     }
 }
 

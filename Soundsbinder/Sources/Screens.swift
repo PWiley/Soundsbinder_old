@@ -25,8 +25,13 @@ final class Screens {
 
 // MARK: - Search
 
+protocol ArtistSearchScreenDelegate: AnyObject {
+    func artistSearchScreenDidSelectArtist(for id: Int)
+    // func artistScreenShouldDisplayAlert(for type: AlertType)
+}
+
 extension Screens {
-    func createSearchViewController(delegate: ArtistSearchViewModelDelegate) -> UIViewController {
+    func createSearchViewController(delegate: ArtistSearchScreenDelegate) -> UIViewController {
         let viewController = artistStoryBoard.instantiateViewController(withIdentifier: "ArtistSearchViewController") as! ArtistSearchViewController
         let repository = ArtistSearchRepository(client: context.networkClient)
         let viewModel = ArtistSearchViewModel(artistRepository: repository, delegate: delegate)
@@ -38,11 +43,17 @@ extension Screens {
 
 // MARK: - Details
 
+protocol ArtistDetailsScreenDelegate: AnyObject {
+    // func artistDetailScreenShouldDisplayAlert(for type: AlertType)
+
+}
+
 extension Screens {
-    func createDetailsViewController(trackList: String) -> UIViewController {
-        let viewController = artistStoryBoard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
-        let repository = DetailsRepository(client: context.networkClient)
-        let viewModel = DetailsViewModel(repository: repository, trackList: <#T##String#>)
+    func createDetailsViewController(artistID: Int, delegate: ArtistDetailsScreenDelegate) -> UIViewController {
+        let viewController = artistStoryBoard.instantiateViewController(withIdentifier: "ArtistDetailsViewController") as! ArtistDetailsViewController
+        let repository = ArtistDetailsRepository(client: context.networkClient)
+        let viewModel = ArtistDetailsViewModel(artistId: artistID, repository: repository, delegate: delegate)
+        viewController.viewModel = viewModel
         return viewController
     }
 }

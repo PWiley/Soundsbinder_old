@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Details View Controller-->
+        <!--Artist Details View Controller-->
         <scene sceneID="XqZ-RE-bHp">
             <objects>
-                <viewController storyboardIdentifier="ArtistDetailsViewController" id="Ynd-YF-qIY" customClass="DetailsViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ArtistDetailsViewController" id="Ynd-YF-qIY" customClass="ArtistDetailsViewController" customModule="Soundsbinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3EI-J4-xSS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -58,7 +58,7 @@
                                                         </button>
                                                     </subviews>
                                                 </stackView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7X-hi-csf">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7X-hi-csf" userLabel="Track Number">
                                                     <rect key="frame" x="8.0000000000000018" y="8" width="28.666666666666671" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="Dk9-7O-OSx"/>
@@ -79,10 +79,12 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="albumTitle" destination="gVW-W7-IeG" id="Q1x-sD-kuP"/>
                                             <outlet property="albumTitleLabel" destination="gVW-W7-IeG" id="baJ-pi-AVv"/>
-                                            <outlet property="playStopTrackButton" destination="b0B-Ny-51A" id="GJW-SN-0xi"/>
-                                            <outlet property="positionLabel" destination="i7X-hi-csf" id="UHU-Az-Th1"/>
-                                            <outlet property="titleLabel" destination="Uhs-Dh-yHo" id="nOg-Qk-8gO"/>
+                                            <outlet property="playStopTrackButton" destination="b0B-Ny-51A" id="rnE-Yf-pcm"/>
+                                            <outlet property="positionLabel" destination="i7X-hi-csf" id="iVO-fN-Va9"/>
+                                            <outlet property="titleLabel" destination="Uhs-Dh-yHo" id="YpQ-jB-1tE"/>
+                                            <outlet property="trackNumber" destination="i7X-hi-csf" id="bBp-xM-mp5"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -100,7 +102,7 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="tableView" destination="WAc-gI-KA1" id="fdh-CN-a4P"/>
+                        <outlet property="tableView" destination="WAc-gI-KA1" id="Aa8-Ri-C3a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L4w-Zn-VzL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -177,7 +179,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Artist Search" id="xy4-yI-Vx2"/>
                     <connections>
-                        <outlet property="collectionView" destination="Jla-aA-wce" id="msM-Ke-b8e"/>
+                        <outlet property="collection" destination="Jla-aA-wce" id="UAZ-bX-IZd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LCQ-gF-QAy" userLabel="First Responder" sceneMemberID="firstResponder"/>

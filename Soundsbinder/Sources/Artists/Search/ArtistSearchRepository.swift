@@ -36,8 +36,6 @@ final class ArtistSearchRepository: ArtistSearchRepositoryType {
             switch result {
             case .success(let data):
                 self.handle(data: data, callback: callback)
-//                let result = self.handle(data: data)
-//                callback(.success(result))
             case .failure(let error):
                 callback(.failure(error))
             }
@@ -55,11 +53,3 @@ final class ArtistSearchRepository: ArtistSearchRepositoryType {
         })
     }
 }
-
-//extension Artist {
-//    init(item: ArtistsResponse.Artist) {
-//        self.name = item.name
-//        self.pictureMedium = item.pictureURLString
-//        self.tracklist = item.tracklist
-//    }
-//}

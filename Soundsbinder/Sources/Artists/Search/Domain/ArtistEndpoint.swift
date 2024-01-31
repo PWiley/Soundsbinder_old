@@ -9,9 +9,9 @@ import Foundation
 
 final class ArtistEndpoint: Endpoint {
     
-    var method: HTTPMethod
-    var path: String
-    var queryParameters: [String : Any]?
+    let method: HTTPMethod
+    let path: String
+    let queryParameters: [String : Any]?
     
     init(name: String) {
         self.method = .GET
